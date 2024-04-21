@@ -1,0 +1,37 @@
+//Canvas
+let nightCanvas;
+let nightCanvasWidth =  0.75*(screen.width);
+let nightCanvasHeight = 300;
+let context;
+
+//Asteroids
+let asteroidsWidth = 40;
+let asteroidsHeight = 40;
+let asteroidsY = 100;
+let asteroidImage;
+
+let asteroidsArray = [];
+
+window.onload = function() {
+    nightCanvas = document.getElementById("nightsky");
+    context = nightCanvas.getContext("2d");
+
+    asteroidImage = new Image();
+    asteroidImage.src = "images/asteroid.png";
+    asteroidImage.onload = function() {
+        init();
+        animate(); // Start the animation loop after initialization
+    }
+}
+
+function init() {
+    // Initialize any variables or setup needed
+}
+
+function animate() {
+    requestAnimationFrame(animate); // Call the function recursively for smooth animation
+    context.clearRect(0, 0, nightCanvasWidth, nightCanvasHeight); // Clear the canvas
+
+    // Draw the asteroid at specified position
+    context.drawImage(asteroidImage, asteroidsWidth, asteroidsY, asteroidsWidth, asteroidsHeight);
+}

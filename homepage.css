@@ -1,0 +1,80 @@
+body{
+    z-index: 0;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: black;
+}
+
+h1{
+    color: white;
+    font-size: 50px;
+}
+.SPACE{
+    display:flex;
+    justify-content: center;
+}
+.leftside{
+    z-index: 2; 
+    float: left;
+    width: 15%;
+    height: 310px;
+    background-color: black;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 3px 0px 0px;
+    color: white;
+    text-align: center;
+}
+#nightsky{
+    z-index: 0; 
+    float: left;
+    border-color: white;
+    border-style: solid;
+    background-color: black;
+    border-width: 3px 0px 3px 0px;
+    color: white;
+    text-align: center;
+    overflow: visible;
+}
+.rightside{
+    z-index: 2; 
+    float: right;
+    width: 15%;
+    height: 310px;
+    background-color: black;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 0px 0px 3px;
+    color: white;
+    text-align: center;
+}
+.asteroid1 {
+    display: flex;
+    justify-content: end;
+    top: 0;
+}
+
+.asteroid {
+    animation-name: moveAsteroid, spinAsteroid;
+    animation-duration: 5s; 
+    animation-iteration-count: infinite; 
+}
+
+@keyframes moveAsteroid {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+@keyframes spinAsteroid {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
